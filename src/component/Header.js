@@ -1,7 +1,9 @@
 
 import React from "react";
-import { Button } from "react-bootstrap";
+import {Button} from "react-bootstrap";
 import logo from "../assets/logo.jpg";
+import { NavLink, Outlet } from "react-router-dom";
+
 
 function Header() {
   return (
@@ -14,27 +16,27 @@ function Header() {
       </div>
       <div className="nav">
         <div className="align-btn-nav">
+        <NavLink to='/'>
           <Button className="nav-btn">
+            
             <p className="btn-text">Home</p>
           </Button>
+          </NavLink>
+
+          <NavLink to='/about'>
           <Button className="nav-btn">
             <p className="btn-text">Maids</p>
           </Button>
-          <Button className="nav-btn">
-            <p className="btn-text">Rates</p>
-          </Button>
-          <Button className="nav-btn">
-            <p className="btn-text">Book</p>
-          </Button>
-          <Button className="nav-btn">
-            <p className="btn-text">FAQ's</p>
-          </Button>
-          <Button className="nav-btn">
-            <p className="btn-text">Contact Us</p>
-          </Button>
+          </NavLink>
+
+          
+      </div>
+      </div>
+      <div>
+            <Outlet/>
         </div>
       </div>
-      </div>
+      
   );
 }
 

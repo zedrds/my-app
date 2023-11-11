@@ -2,26 +2,28 @@
 // import { getAnalytics } from "firebase/analytics";
 import Login from "./views/Login";
 import "./App.css";
-import Screen from "./views/Screen";
+import Home from "./views/Home";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+import RootLayout from "./views/RootLayout";
+import About from "./views/Maids";
+import Header from "./component/Header";
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDlSSZ3F8B_tvcJfaHX-YWQX1EdElbq7Cw",
-//   authDomain: "yaya-dub.firebaseapp.com",
-//   projectId: "yaya-dub",
-//   storageBucket: "yaya-dub.appspot.com",
-//   messagingSenderId: "770085437259",
-//   appId: "1:770085437259:web:3d36373048a3222170f2ce",
-//   measurementId: "G-LGM2V8K17V"
-// };
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Header/>}>
+      <Route index element={<Home />} />
+      <Route path="/about" element={<About />} />
+    </Route>
+  )
+);
 
 function App() {
-  return (
-    <div className="App">
-      <Screen/>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
