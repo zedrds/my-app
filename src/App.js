@@ -1,6 +1,6 @@
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
-import Login from "./views/Login";
+
 import "./App.css";
 import Home from "./views/Home";
 import {

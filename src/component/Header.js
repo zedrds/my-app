@@ -2,14 +2,16 @@
 import React from "react";
 import {Button} from "react-bootstrap";
 import logo from "../assets/logo.jpg";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 
 function Header() {
   return (
     <div className="navbar">
         <div className="banner">
+          <Link to='/'>
       <img className="logo" src={logo} alt="" />
+      </Link>
       <p className="logo-text">YAYABOOK </p>
       <p className="logo-text2">BOOK THAT YAYA NOW 
       </p>
