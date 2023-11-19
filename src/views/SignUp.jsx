@@ -3,16 +3,18 @@ import logo from "../assets/logo.jpg";
 import { auth } from "../Firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Button, NavLink } from "react-bootstrap";
+import { useNavigate, Link } from "react-router-dom";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const signUp = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -25,11 +27,11 @@ const SignUp = () => {
         <img className="login-logo" src={logo} alt="" />
         <p>Create Account</p>
         <div className="input-container">
-          <label>Username </label>
+          <label>Email </label>
           <input
             className="input-box"
             type="text"
-            placeholder="Enter Username"
+            placeholder="Enter Email"
             name="uname"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -52,12 +54,10 @@ const SignUp = () => {
           <Button className="sign-in-btn" type="submit">
             Sign Up
           </Button>
-        
-        <NavLink to="/about">
-          <Button className="sign-in-btn">
-            Cancel
-          </Button>
-        </NavLink>
+
+          <Link to="/">
+            <Button className="sign-in-btn">Cancel</Button>
+          </Link>
         </div>
       </form>
     </div>

@@ -9,7 +9,7 @@ function Header() {
   return (
     <div className="navbar">
         <div className="banner">
-          <Link to='/'>
+          <Link to='/home'>
       <img className="logo" src={logo} alt="" />
       </Link>
       <p className="logo-text">YAYABOOK </p>

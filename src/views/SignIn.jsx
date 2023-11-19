@@ -4,19 +4,18 @@ import { auth } from "../Firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Button, NavLink } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-
-
-
+import SignUp from "./SignUp";
+import { Link } from "react-router-dom";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate =useNavigate()
+  const navigate = useNavigate();
   const signIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
-        navigate('/home')
+        navigate("/home");
       })
       .catch((error) => {
         console.log(error);
@@ -28,11 +27,11 @@ const SignIn = () => {
       <form className="form-container" onSubmit={signIn}>
         <img className="login-logo" src={logo} alt="" />
         <div className="input-container">
-          <label>Username </label>
+          <label>Email </label>
           <input
             className="input-box"
             type="text"
-            placeholder="Enter Username"
+            placeholder="Enter Email"
             name="uname"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -55,10 +54,9 @@ const SignIn = () => {
           <Button className="sign-in-btn" type="submit">
             Sign In
           </Button>
-        
-        <NavLink to="/signup">
-          <Button className="sign-in-btn">Sign Up</Button>
-        </NavLink>
+          <Link to="/register">
+            <Button className="sign-in-btn">Register</Button>
+          </Link>
         </div>
       </form>
     </div>
