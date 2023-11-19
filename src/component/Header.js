@@ -18,20 +18,24 @@ function Header() {
       </div>
       <div className="nav">
         <div className="align-btn-nav">
-        <NavLink to='/'>
+        <NavLink to='/home'>
           <Button className="nav-btn">
             
             <p className="btn-text">Home</p>
           </Button>
           </NavLink>
 
-          <NavLink to='/about'>
+          <NavLink to='maids'>
           <Button className="nav-btn">
             <p className="btn-text">Maids</p>
           </Button>
           </NavLink>
 
-          
+          <NavLink to='book'>
+          <Button className="nav-btn">
+            <p className="btn-text">Book</p>
+          </Button>
+          </NavLink>
       </div>
       </div>
       <div>

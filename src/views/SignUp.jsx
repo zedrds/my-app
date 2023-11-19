@@ -53,7 +53,7 @@ const SignUp = () => {
             Sign Up
           </Button>
         
-        <NavLink to="/">
+        <NavLink to="/about">
           <Button className="sign-in-btn">
             Cancel
           </Button>

@@ -3,16 +3,20 @@ import logo from "../assets/logo.jpg";
 import { auth } from "../Firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Button, NavLink } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+
+
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate =useNavigate()
   const signIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
+        navigate('/home')
       })
       .catch((error) => {
         console.log(error);
@@ -51,12 +55,11 @@ const SignIn = () => {
           <Button className="sign-in-btn" type="submit">
             Sign In
           </Button>
-        </div>
+        
         <NavLink to="/signup">
-          <Button className="sign-in-btn">
-           Create Account
-          </Button>
+          <Button className="sign-in-btn">Sign Up</Button>
         </NavLink>
+        </div>
       </form>
     </div>
   );

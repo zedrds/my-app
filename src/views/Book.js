@@ -1,24 +1,35 @@
-import React  from "react";
+import React from "react";
+import { Form, Button } from "react-bootstrap";
 
+export default function Book() {
+  return (
+    <Form className="booking-form">
+      <Form.Group className="book-label" controlId="formBasicEmail">
+        <p>Name</p>
+        <p>Address</p>
+        <p>Email</p>
+      </Form.Group>
+      <Form.Group className="book-input" controlId="">
+        <Form.Control
+          className="form-input"
+          type="text"
+          placeholder="Enter Name"
+        />
+        <Form.Control
+          className="form-input"
+          type="text"
+          placeholder="Enter Addresss"
+        />
+        <Form.Control
+          className="form-input"
+          type="email"
+          placeholder="Enter email"
+        />
+      </Form.Group>
 
-
-export default function Book(){
-    return (
-        <form>
-        <div className="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    )
+      <Button className="book-btn" variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+  );
 }
