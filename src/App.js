@@ -1,6 +1,3 @@
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-
 import "./App.css";
 import Home from "./views/Home";
 import {
@@ -9,18 +6,18 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import RootLayout from "./views/RootLayout";
-import About from "./views/Maids";
-import Header from "./component/Header";
+import About from "./views/About";
+import SignIn from "./views/SignIn";
+import SignUp from "./views/SignUp";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Header/>}>
-      <Route index element={<Home />} />
+    <Route path="/" element={<SignIn />}>
+      {/* <Route index element={<SignIn/>} /> */}
       <Route path="/about" element={<About />} />
+      <Route path="/signup" element={<SignUp />} />
     </Route>
   )
-  
 );
 
 function App() {

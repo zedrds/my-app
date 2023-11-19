@@ -7,7 +7,6 @@ import Dashboard from '../component/Dashboard'
 export default function RootLayout() {
   return (
     <div>
-      
     <Header/>
     </div>
   )

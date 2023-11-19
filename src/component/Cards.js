@@ -6,7 +6,8 @@ import { Card, Button, Image } from "react-bootstrap";
 
 export default function Cards(props) {
   return (
-    <div className="card-container">
+    <div className="card-bodyx">
+    <div className="card-body">
       <Card className="maid-card">
         <img className="cardimg" src={props.img} alt="img" />
         <Card.Body>
@@ -16,6 +17,7 @@ export default function Cards(props) {
           <Card.Text className="card-text">{props.experience}</Card.Text>
         </Card.Body>
       </Card>
+    </div>
     </div>
   );
 }

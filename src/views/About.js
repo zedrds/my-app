@@ -6,12 +6,10 @@ import hero1 from "../assets/sample.jpeg";
 import hero2 from "../assets/lana.jpg";
 import hero3 from "../assets/hannah.jpg";
 
-
 export default function About() {
   return (
     <div>
-
-<div className="card-container">
+      <div className="card-container">
         <Cards
           img={hero}
           name="Belle Dolpeng"
